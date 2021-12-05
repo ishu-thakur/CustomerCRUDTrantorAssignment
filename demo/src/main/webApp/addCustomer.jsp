@@ -175,6 +175,9 @@ label {
 									<input type="submit"
 										class="btn btn-success btn-send pt-2 btn-block " value="Add">
 								</div>
+								<div class="d-flex justify-content-center" class="col-md-12">
+								<a href="mainPage.jsp" class="button">Back</a>
+								</div>
 							</form>
 						</div>
 					</div>

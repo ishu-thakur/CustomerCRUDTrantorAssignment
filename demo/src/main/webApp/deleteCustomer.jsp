@@ -171,7 +171,11 @@ label {
 								</div>
 								<div class="d-flex justify-content-center" class="col-md-12">
 									<input type="submit"
-										class="btn btn-success btn-send pt-2 btn-block " value="Delete">
+										class="btn btn-success btn-send pt-2 btn-block "
+										value="Delete">
+								</div>
+								<div class="d-flex justify-content-center" class="col-md-12">
+									<a href="mainPage.jsp" class="button">Back</a>
 								</div>
 							</form>
 						</div>
@@ -179,8 +183,8 @@ label {
 				</div>
 			</div>
 		</div>
-		<!-- /.8 -->
 	</div>
+	<!-- /.8 -->
 	<!-- /.row-->
 </body>
 </html>

@@ -133,7 +133,7 @@ label {
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<label for="form_need">Customer Type  </label> <select
+												<label for="form_need">Customer Type </label> <select
 													id="form_need" name="type" class="form-control">
 													<option value="" selected disabled>--Select Your
 														customer type--</option>
@@ -159,7 +159,7 @@ label {
 									<div class="lists">
 										<label>Select State </label> <select name="state"
 											id="stateList" class="form-control">
-											<option value="" selected="selected">Select State </option>
+											<option value="" selected="selected">Select State</option>
 										</select>
 									</div>
 									<div class="lists">
@@ -172,6 +172,9 @@ label {
 								<div class="d-flex justify-content-center" class="col-md-12">
 									<input type="submit"
 										class="btn btn-success btn-send pt-2 btn-block" value="Update">
+								</div>
+								<div class="d-flex justify-content-center" class="col-md-12">
+									<a href="mainPage.jsp" class="button">Back</a>
 								</div>
 							</form>
 						</div>
