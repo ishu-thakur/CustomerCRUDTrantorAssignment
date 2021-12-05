@@ -1,0 +1,18 @@
+package com.greycampus.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.greycampus.entity.Customer;
+import com.greycampus.service.CustomerService;
+
+@RestController
+public class CustomerController {
+
+	@Autowired
+	private CustomerService service;
+
+	public void insert(Customer customer) {
+		service.insert(customer);
+	}
+}

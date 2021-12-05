@@ -1,0 +1,53 @@
+package com.greycampus.entity;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
+import org.springframework.data.annotation.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer {
+
+	@Id
+	private int cid;
+	private String name;
+	private String type;
+	private String phone;
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+	private List<Address> address;
+
+	public List<Address> getAddressTb2s() {
+		return this.address;
+	}
+
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+
+	public Address addAddressTb2(Address address) {
+		getAddress().add(address);
+		address.setCustomer(this);
+
+		return address;
+	}
+
+	public Address removeAddressTb2(Address address) {
+		getAddress().remove(address);
+		address.setCustomer(null);
+
+		return address;
+	}
+
+}

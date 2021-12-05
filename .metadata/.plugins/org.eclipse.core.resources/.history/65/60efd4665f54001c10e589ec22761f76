@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<body>
+	<!-- Example split danger button -->
+	<div class="btn-group">
+		<button type="button" class="btn btn-danger">Action</button>
+		<button type="button"
+			class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<span class="sr-only">Toggle Dropdown</span>
+		</button>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="addCustomer">Add Customer</a> <a
+				class="dropdown-item" href="updateCustomer">Update Customer</a> <a
+				class="dropdown-item" href="searchCustomer">Search Customer</a> <a
+				class="dropdown-item" href="deleteCustomer">Delete Customer</a>
+		</div>
+	</div>
+</body>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+package com.greycampus.dao;
+
+import javax.sql.DataSource;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.greycampus.entity.Customer;
+
+@Repository
+@Transactional
+public class CustomerDAO extends JdbcDaoSupport {
+
+	@Autowired
+	public CustomerDAO(DataSource dataSource) {
+		this.setDataSource(dataSource);
+	}
+
+	public int insert(Customer customer) {
+		String sql = "insert into customer values(?,?,?,?,?,?,?)";
+		return getJdbcTemplate().update(sql, customer.getEno(), customer.getName(), customer.getType(),
+				customer.getStreet(), customer.getCountry(), customer.getCity(), customer.getPhone());
+	}
+
+}

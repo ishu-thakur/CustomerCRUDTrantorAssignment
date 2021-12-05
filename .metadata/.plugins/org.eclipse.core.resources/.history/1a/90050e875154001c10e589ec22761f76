@@ -1,0 +1,5 @@
+package com.greycampus.entity;
+
+public class Address {
+
+}

@@ -1,0 +1,9 @@
+package com.greycampus.entity;
+
+import javax.persistence.Table;
+
+@Table(name = "CITY")
+public class cityModel {
+
+	private 
+}

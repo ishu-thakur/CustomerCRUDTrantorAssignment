@@ -1,0 +1,29 @@
+package com.greycampus.entity;
+
+import org.springframework.data.annotation.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.Auto, generator = "book_generator")
+	@SequenceGenerator(name = "book_generator", sequenceName = "book_seq", allocationSize = 50)
+	private int eno;
+	private String name;
+	private String type;
+	private String street;
+	private String country;
+	private String city;
+	private String phone;
+
+}

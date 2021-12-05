@@ -1,0 +1,46 @@
+package com.greycampus.dao;
+
+import java.util.ArrayList;
+
+import javax.sql.DataSource;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.greycampus.entity.Address;
+import com.greycampus.entity.Customer;
+
+@Repository
+@Transactional
+public class CustomerDAO extends JdbcDaoSupport {
+
+	@Autowired
+	public CustomerDAO(DataSource dataSource) {
+		this.setDataSource(dataSource);
+	}
+
+	public static java.sql.Date getCurrentDate() {
+		java.util.Date today = new java.util.Date();
+		return new java.sql.Date(today.getTime());
+	}
+
+	public int insert(Customer customer) {
+		String sql = "insert into customer values(?,?,?,?,?,?)";
+		String queryAddress="insert into address values(?,?,?,?)";
+		Address address = new Address();
+		address.setCity(address.getStreet());
+		address.setCity(address.getCity());
+		address.setCity(address.getCountry());
+//		int update = getJdbcTemplate().update(queryAddress,address.getStreet(),address.getCity(), address.getCountry(), customer.getCid());
+		address.setCustomer(customer);
+		ArrayList<Address> addressList = new ArrayList<Address>();
+		addressList.add(address);
+		customer.setAddress(addressList);
+
+		return getJdbcTemplate().update(sql, customer.getCid(), customer.getName(), customer.getType(),
+				customer.getPhone(), getCurrentDate(), getCurrentDate());
+	}
+
+}
